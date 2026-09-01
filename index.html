@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@300;500;700&family=Manrope:wght@400;500;700&family=JetBrains+Mono:wght@400&display=swap" rel="stylesheet" />
+<style>
+  body { margin: 0; background: #F7F0E4; color: #2A211C; font-family: 'Manrope', system-ui, sans-serif; overflow: hidden; }
+  a { color: #A8455A; text-decoration: none; }
+  a:hover { color: #C8952F; }
+  @keyframes crownBob { 0%,100% { transform: translate(-50%, 0) rotate(-6deg); } 50% { transform: translate(-50%, -14%) rotate(6deg); } }
+  @keyframes crownGlow { 0%,100% { opacity: .25; transform: scale(.9); } 50% { opacity: .7; transform: scale(1.15); } }
+  @keyframes sparkle { 0%,100% { opacity: 0; transform: scale(.4); } 50% { opacity: 1; transform: scale(1); } }
+  @keyframes riseIn { from { opacity: 0; transform: translateY(24px); } to { opacity: 1; transform: none; } }
+  @keyframes pageIn { from { opacity: 0; transform: translateX(28px); } to { opacity: 1; transform: none; } }
+  @keyframes overlayIn { from { opacity: 0; transform: scale(1.08); } to { opacity: 1; transform: none; } }
+  @keyframes shakeText { 0%,100% { transform: rotate(-2deg) scale(1); } 25% { transform: rotate(2deg) scale(1.04); } 50% { transform: rotate(-1.5deg) scale(.99); } 75% { transform: rotate(1.5deg) scale(1.03); } }
+  @keyframes unwrap { 0% { opacity: 0; transform: scale(.55) rotate(-6deg); } 60% { opacity: 1; transform: scale(1.04) rotate(1deg); } 100% { opacity: 1; transform: none; } }
+  @keyframes floatSoft { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-10px); } }
+</style>
+<template id="__bundler_thumbnail"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><rect width="100" height="100" fill="#F3E7D4"/><text x="50" y="62" font-family="sans-serif" font-size="34" font-weight="700" fill="#A8455A" text-anchor="middle">О</text></svg></template>
+<template id="__bundler_thumbnail"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><rect width="100" height="100" fill="#F3E7D4"/><text x="50" y="62" font-family="sans-serif" font-size="34" font-weight="700" fill="#A8455A" text-anchor="middle">О</text></svg></template>
+</helmet>
+
+<div style="height: 100vh; overflow: hidden; position: relative">
+
+<sc-if value="{{ p1 }}" hint-placeholder-val="{{ true }}">
+<section data-screen-label="01 Привітання" style="height: 100vh; overflow-y: auto; box-sizing: border-box; display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 1fr)); gap: clamp(20px, 4vw, 64px); align-items: center; align-content: safe center; padding: clamp(24px, 4.5vw, 76px) clamp(20px, 4.5vw, 76px) 84px; background: radial-gradient(120% 90% at 15% 10%, #FDF8F0 0%, #F3E7D4 55%, #EADCC4 100%); animation: pageIn .5s ease both">
+  <div style="display: flex; flex-direction: column; gap: clamp(12px, 1.8vw, 22px); animation: riseIn .8s ease both">
+    <h1 style="margin: 0; font-family: 'Unbounded', sans-serif; font-weight: 700; font-size: clamp(32px, 4.8vw, 84px); line-height: .95; letter-spacing: -.02em">З Днем<br />народження,<br /><span style="color: #A8455A">Оля!</span></h1>
+    <p style="margin: 0; max-width: 34ch; font-size: clamp(16px, 1.5vw, 21px); line-height: 1.55; color: #4A3B33; text-wrap: pretty">Щоб жити було веселіше і цікавіше, ось тобі забавний квіз, щоб отримати подарунок!</p>
+    <button type="button" onClick="{{ next }}" style="align-self: start; margin-top: 6px; display: inline-flex; align-items: center; gap: 10px; min-height: 44px; padding: 16px 28px; border: 0; border-radius: 999px; cursor: pointer; background: #2A211C; color: #F7F0E4; font-family: 'Manrope', sans-serif; font-weight: 700; font-size: 17px" style-hover="background: #A8455A">Почати квіз <span style="font-size: 18px">→</span></button>
+  </div>
+
+  <div style="position: relative; justify-self: center; width: calc(100% - 24px); max-width: min(400px, 42vh); animation: riseIn 1s .15s ease both">
+    <div style="position: absolute; inset: -12px -12px 12px 12px; border-radius: 24px; background: #C8952F; opacity: .18"></div>
+    <div style="position: relative; border-radius: 20px; overflow: hidden; box-shadow: 0 30px 70px -30px rgba(42,33,28,.55)">
+      <img src="uploads/IMG_1172.jpeg" alt="Оля на коні" style="display: block; width: 100%; aspect-ratio: 3 / 4; object-fit: cover; transform: scale(2.6); transform-origin: 54.4% 43%" />
+      <div style="position: absolute; left: 47%; top: 33%; width: 15%; animation: crownGlow 3.2s ease-in-out infinite; transform-origin: center">
+        <div style="width: 100%; padding-bottom: 100%; border-radius: 50%; background: radial-gradient(circle, #FFD97A 0%, rgba(255,217,122,0) 70%)"></div>
+      </div>
+      <svg viewBox="0 0 100 74" style="position: absolute; left: 54.4%; top: 37.4%; width: 12%; transform: translate(-50%, 0); animation: crownBob 3.2s ease-in-out infinite; filter: drop-shadow(0 4px 6px rgba(0,0,0,.35))">
+        <polygon points="4,66 0,10 25,34 50,2 75,34 100,10 96,66" fill="#E9B949" />
+        <polygon points="4,66 96,66 96,74 4,74" fill="#C8952F" />
+        <circle cx="50" cy="14" r="7" fill="#A8455A" />
+        <circle cx="10" cy="24" r="5" fill="#A8455A" />
+        <circle cx="90" cy="24" r="5" fill="#A8455A" />
+      </svg>
+      <div style="position: absolute; left: 45%; top: 34%; width: 10px; height: 10px; border-radius: 50%; background: #FFF3D0; animation: sparkle 2.2s ease-in-out infinite"></div>
+      <div style="position: absolute; left: 65%; top: 37%; width: 8px; height: 8px; border-radius: 50%; background: #FFF3D0; animation: sparkle 2.6s .5s ease-in-out infinite"></div>
+      <div style="position: absolute; left: 57%; top: 29%; width: 6px; height: 6px; border-radius: 50%; background: #FFF3D0; animation: sparkle 3s 1.1s ease-in-out infinite"></div>
+    </div>
+  </div>
+</section>
+</sc-if>
+
+<sc-if value="{{ pQuiz }}" hint-placeholder-val="{{ false }}">
+<section data-screen-label="02 Квіз" style="height: 100vh; overflow-y: auto; box-sizing: border-box; display: flex; flex-direction: column; justify-content: safe center; align-items: center; gap: clamp(16px, 2.6vw, 32px); padding: clamp(20px, 4.5vw, 68px) clamp(18px, 4.5vw, 68px) 84px; background: #2A211C; color: #F7F0E4; animation: pageIn .45s ease both">
+  <div style="width: 100%; max-width: 980px; display: flex; align-items: center; gap: 16px">
+    <div style="font-family: 'JetBrains Mono', monospace; font-size: 13px; letter-spacing: .1em; color: #E9B949; white-space: nowrap">{{ progressLabel }}</div>
+    <div style="flex: 1; height: 3px; background: rgba(247,240,228,.18); border-radius: 999px; overflow: hidden">
+      <div style="height: 100%; width: {{ progressPct }}; background: #E9B949; transition: width .4s ease"></div>
+    </div>
+  </div>
+
+  <div style="width: 100%; max-width: 980px; display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 260px), 1fr)); gap: clamp(18px, 3vw, 44px); align-items: center">
+    <div style="border-radius: 16px; overflow: hidden; aspect-ratio: 4 / 5; max-height: 34vh; justify-self: center; width: 100%; background: rgba(247,240,228,.06); box-shadow: 0 26px 60px -34px rgba(0,0,0,.7)">
+      <sc-if value="{{ q1 }}" hint-placeholder-val="{{ true }}">
+        <img src="uploads/IMG_1505.jpeg" alt="Гори" style="display: block; width: 100%; height: 100%; object-fit: contain" />
+      </sc-if>
+      <sc-if value="{{ q2 }}" hint-placeholder-val="{{ false }}">
+        <img src="uploads/pasted-1788259773348-0.png" alt="Концерт" style="display: block; width: 100%; height: 100%; object-fit: contain" />
+      </sc-if>
+      <sc-if value="{{ q3 }}" hint-placeholder-val="{{ false }}">
+        <img src="uploads/IMG_9413.jpeg" alt="Бар Golda" style="display: block; width: 100%; height: 100%; object-fit: contain" />
+      </sc-if>
+      <sc-if value="{{ q4 }}" hint-placeholder-val="{{ false }}">
+        <img src="uploads/pasted-1788259839043-0.png" alt="Пивзавод" style="display: block; width: 100%; height: 100%; object-fit: contain" />
+      </sc-if>
+      <sc-if value="{{ q5 }}" hint-placeholder-val="{{ false }}">
+        <img src="uploads/047F2337-7FD7-46EE-83D0-E701F957F47E_1_105_c.jpeg" alt="Концерт увечері" style="display: block; width: 100%; height: 100%; object-fit: contain" />
+      </sc-if>
+    </div>
+
+    <div style="display: flex; flex-direction: column; gap: clamp(14px, 2vw, 22px)">
+      <h2 style="margin: 0; font-family: 'Unbounded', sans-serif; font-weight: 500; font-size: clamp(22px, 3vw, 42px); line-height: 1.1; letter-spacing: -.01em">{{ questionText }}</h2>
+      <div style="display: flex; flex-direction: column; gap: 12px">
+        <sc-for list="{{ options }}" as="opt" hint-placeholder-count="3">
+          <button type="button" onClick="{{ opt.pick }}" style="display: flex; align-items: center; gap: 14px; width: 100%; text-align: left; min-height: 56px; padding: 14px 18px; border-radius: 14px; cursor: pointer; font-family: 'Manrope', sans-serif; font-size: clamp(15px, 1.5vw, 19px); font-weight: 500; transition: all .25s ease; background: {{ opt.bg }}; color: {{ opt.fg }}; border: 1.5px solid {{ opt.bd }}" style-hover="border-color: #E9B949">
+            <span style="font-family: 'JetBrains Mono', monospace; font-size: 13px; opacity: .7">{{ opt.letter }}</span>
+            <span style="flex: 1">{{ opt.text }}</span>
+            <span style="font-size: 18px">{{ opt.mark }}</span>
+          </button>
+        </sc-for>
+      </div>
+      <sc-if value="{{ revealed }}" hint-placeholder-val="{{ false }}">
+        <div style="display: flex; flex-wrap: wrap; align-items: center; gap: 16px; padding-top: 4px; animation: riseIn .4s ease both">
+          <div style="font-size: clamp(15px, 1.5vw, 19px); color: #E9B949; font-weight: 700">{{ feedback }}</div>
+          <button type="button" onClick="{{ next }}" style="min-height: 44px; padding: 12px 24px; border: 0; border-radius: 999px; cursor: pointer; background: #F7F0E4; color: #2A211C; font-family: 'Manrope', sans-serif; font-weight: 700; font-size: 16px" style-hover="background: #E9B949">{{ nextLabel }}</button>
+        </div>
+      </sc-if>
+    </div>
+  </div>
+</section>
+</sc-if>
+
+<sc-if value="{{ pScore }}" hint-placeholder-val="{{ false }}">
+<section data-screen-label="03 Результат" style="height: 100vh; overflow-y: auto; box-sizing: border-box; display: flex; flex-direction: column; justify-content: safe center; align-items: center; gap: 20px; padding: clamp(24px, 5vw, 72px) clamp(20px, 5vw, 72px) 84px; background: #2A211C; color: #F7F0E4; text-align: center; animation: pageIn .45s ease both">
+  <div style="font-family: 'JetBrains Mono', monospace; font-size: 13px; letter-spacing: .22em; text-transform: uppercase; color: #E9B949">результат</div>
+  <div style="font-family: 'Unbounded', sans-serif; font-weight: 700; font-size: clamp(40px, 8vw, 120px); line-height: 1">{{ scoreTitle }}</div>
+  <p style="margin: 0; max-width: 34ch; font-size: clamp(16px, 1.6vw, 21px); line-height: 1.55; color: rgba(247,240,228,.8)">{{ scoreText }}</p>
+  <div style="display: flex; gap: 12px; flex-wrap: wrap; justify-content: center; margin-top: 6px">
+    <button type="button" onClick="{{ next }}" style="min-height: 44px; padding: 15px 28px; border: 0; border-radius: 999px; cursor: pointer; background: #E9B949; color: #2A211C; font-family: 'Manrope', sans-serif; font-weight: 700; font-size: 17px" style-hover="background: #F7F0E4">До подарунків →</button>
+  </div>
+</section>
+</sc-if>
+
+<sc-if value="{{ p4 }}" hint-placeholder-val="{{ false }}">
+<section data-screen-label="04 Подарунок: курс історії" style="height: 100vh; overflow-y: auto; box-sizing: border-box; display: flex; flex-direction: column; align-items: center; justify-content: safe center; gap: clamp(16px, 2.4vw, 28px); padding: clamp(24px, 4.5vw, 76px) clamp(20px, 4.5vw, 76px) 84px; background: #F7F0E4; animation: pageIn .45s ease both">
+  <div style="font-family: 'JetBrains Mono', monospace; font-size: 13px; letter-spacing: .22em; text-transform: uppercase; color: #A8455A">подарунок №1</div>
+
+  <sc-if value="{{ giftClosed }}" hint-placeholder-val="{{ true }}">
+    <button type="button" onClick="{{ openGift }}" style="position: relative; width: min(340px, 62vw, 46vh); aspect-ratio: 1 / 1; border: 0; border-radius: 22px; cursor: pointer; background: #A8455A; box-shadow: 0 30px 70px -34px rgba(42,33,28,.6); animation: floatSoft 5s ease-in-out infinite; transition: transform .25s ease" style-hover="transform: scale(1.03)">
+      <div style="position: absolute; left: 50%; top: 0; bottom: 0; width: 15%; transform: translateX(-50%); background: #E9B949"></div>
+      <div style="position: absolute; top: 50%; left: 0; right: 0; height: 15%; transform: translateY(-50%); background: #E9B949"></div>
+      <div style="position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%); width: 34%; aspect-ratio: 1 / 1; border-radius: 50%; background: #F7F0E4; box-shadow: inset 0 0 0 8px #E9B949"></div>
+    </button>
+    <div style="font-family: 'Manrope', sans-serif; font-size: clamp(16px, 1.7vw, 21px); font-weight: 700; color: #2A211C">Тисни, щоб відкрити</div>
+  </sc-if>
+
+  <sc-if value="{{ giftOpened }}" hint-placeholder-val="{{ false }}">
+    <div style="display: flex; flex-wrap: wrap; gap: clamp(12px, 2vw, 24px); align-items: center; justify-content: center; animation: unwrap .6s cubic-bezier(.2,.9,.2,1) both">
+      <div style="width: min(380px, 52vh, 72vw); flex-shrink: 0; border-radius: 20px; overflow: hidden; border: 1.5px solid #DCC9A8; box-shadow: 0 26px 60px -34px rgba(42,33,28,.5)">
+        <img src="uploads/pasted-1788104163909-0.png" alt="Курс Історія України" style="display: block; width: 100%; height: auto" />
+      </div>
+      <a href="https://bit.ly/3Poxriv" target="_blank" rel="noopener" style="display: flex; flex-direction: column; align-items: center; gap: 8px; text-decoration: none">
+        <div style="width: min(190px, 40vw); border-radius: 16px; overflow: hidden; border: 1.5px solid #DCC9A8; background: #FDF8F0; transition: transform .2s ease" style-hover="transform: scale(1.04)">
+          <img src="uploads/qr-course.png" alt="QR-код на курс" style="display: block; width: 100%; height: auto" />
+        </div>
+        <div style="font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: .1em; color: #A8455A">скануй або тисни</div>
+      </a>
+    </div>
+    <button type="button" onClick="{{ next }}" style="min-height: 44px; padding: 15px 28px; border: 0; border-radius: 999px; cursor: pointer; background: #A8455A; color: #FFF; font-family: 'Manrope', sans-serif; font-weight: 700; font-size: 17px; animation: riseIn .5s .3s ease both" style-hover="background: #2A211C">Це ще не все →</button>
+  </sc-if>
+</section>
+</sc-if>
+
+<sc-if value="{{ p5 }}" hint-placeholder-val="{{ false }}">
+<section data-screen-label="05 Обери подарунок" style="height: 100vh; overflow-y: auto; box-sizing: border-box; display: flex; flex-direction: column; justify-content: safe center; gap: clamp(18px, 2.6vw, 34px); padding: clamp(20px, 4.5vw, 76px) clamp(18px, 4.5vw, 76px) 84px; background: #EFE3CE; animation: pageIn .45s ease both">
+  <div style="display: flex; flex-direction: column; gap: 10px">
+    <div style="font-family: 'JetBrains Mono', monospace; font-size: 13px; letter-spacing: .22em; text-transform: uppercase; color: #A8455A">подарунок №2</div>
+    <h2 style="margin: 0; font-family: 'Unbounded', sans-serif; font-weight: 700; font-size: clamp(28px, 4.2vw, 60px); line-height: 1; letter-spacing: -.02em">Обери ще один подарунок</h2>
+    <p style="margin: 0; max-width: 46ch; font-size: clamp(15px, 1.5vw, 20px); line-height: 1.5; color: #4A3B33">Один на вибір. Тисни на той, який хочеш.</p>
+  </div>
+  <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: clamp(14px, 2vw, 24px)">
+    <sc-for list="{{ gifts }}" as="gift" hint-placeholder-count="3">
+      <button type="button" onClick="{{ gift.pick }}" style="text-align: left; cursor: pointer; min-height: 200px; padding: clamp(16px, 2vw, 26px); border-radius: 18px; display: flex; flex-direction: column; justify-content: space-between; gap: 16px; font-family: 'Manrope', sans-serif; transition: all .25s ease; background: {{ gift.bg }}; border: 1.5px {{ gift.bstyle }} {{ gift.bd }}; box-shadow: {{ gift.shadow }}" style-hover="border-color: #A8455A">
+        <div style="font-family: 'JetBrains Mono', monospace; font-size: 12px; letter-spacing: .14em; text-transform: uppercase; color: #A8455A">{{ gift.tag }}</div>
+        <div style="flex: 1; min-height: 130px; display: flex; gap: 8px; align-items: center; justify-content: center">
+          <sc-if value="{{ gift.isA }}" hint-placeholder-val="{{ true }}">
+            <img src="uploads/pasted-1788260290798-0.png" alt="Кросівки" style="display: block; width: 100%; height: 100%; max-height: 180px; object-fit: contain; border-radius: 12px" />
+          </sc-if>
+          <sc-if value="{{ gift.isB }}" hint-placeholder-val="{{ false }}">
+            <img src="uploads/pasted-1788260752698-0.png" alt="Каблучка" style="display: block; width: 50%; height: 100%; max-height: 180px; object-fit: contain; border-radius: 12px" />
+          </sc-if>
+          <sc-if value="{{ gift.isB }}" hint-placeholder-val="{{ false }}">
+            <img src="uploads/pasted-1788260743196-0.png" alt="Маска для сну" style="display: block; width: 50%; height: 100%; max-height: 180px; object-fit: contain; border-radius: 12px" />
+          </sc-if>
+          <sc-if value="{{ gift.isC }}" hint-placeholder-val="{{ false }}">
+            <img src="uploads/pasted-1788261652790-0.png" alt="Каблучка" style="display: block; width: 100%; height: 100%; max-height: 180px; object-fit: contain; border-radius: 12px" />
+          </sc-if>
+        </div>
+        <div style="font-family: 'Unbounded', sans-serif; font-weight: 500; font-size: clamp(15px, 1.3vw, 19px); line-height: 1.25; color: #2A211C; text-wrap: pretty">{{ gift.title }}</div>
+        <div style="font-size: 14px; color: #A8455A; font-weight: 700; min-height: 20px">{{ gift.hint }}</div>
+      </button>
+    </sc-for>
+  </div>
+  <a href="{{ mailHref }}" onClick="{{ sendAndNext }}" style="align-self: end; position: sticky; bottom: 8px; display: inline-flex; align-items: center; min-height: 44px; padding: 15px 28px; border-radius: 999px; background: #2A211C; color: #F7F0E4; text-decoration: none; font-family: 'Manrope', sans-serif; font-weight: 700; font-size: 17px" style-hover="background: #A8455A">І останнє →</a>
+</section>
+</sc-if>
+
+<sc-if value="{{ p6 }}" hint-placeholder-val="{{ false }}">
+<section data-screen-label="06 Гриби далі по життю" style="height: 100vh; overflow-y: auto; box-sizing: border-box; display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 260px), 1fr)); gap: clamp(20px, 4vw, 64px); align-items: center; align-content: safe center; padding: clamp(24px, 4.5vw, 76px) clamp(20px, 4.5vw, 76px) 84px; background: radial-gradient(110% 90% at 80% 15%, #3B2C24 0%, #2A211C 60%); color: #F7F0E4; animation: pageIn .45s ease both">
+  <div style="display: flex; flex-direction: column; gap: clamp(12px, 1.8vw, 22px)">
+    <h2 style="margin: 0; font-family: 'Unbounded', sans-serif; font-weight: 700; font-size: clamp(32px, 5vw, 74px); line-height: .98; letter-spacing: -.02em">Дуже ціную<br />і обіймаю 🤍🤍🤍</h2>
+    <p style="margin: 0; max-width: 36ch; font-size: clamp(16px, 1.6vw, 21px); line-height: 1.55; color: rgba(247,240,228,.82); text-wrap: pretty">Гриби далі по життю. В тебе дуже добре виходить.</p>
+  </div>
+  <div style="position: relative; justify-self: center; width: 100%; max-width: 320px">
+    <div style="position: relative; border-radius: 20px; overflow: hidden; box-shadow: 0 30px 70px -30px rgba(0,0,0,.7)">
+      <video ref="{{ videoRef }}" onPlay="{{ keepMuted }}" onVolumeChange="{{ keepMuted }}" src="uploads/43f9aa4f3c4b42fda2672a9029c86e0e.mp4" poster="uploads/14F817E3-5D0A-4EF7-B858-87424FDAE8F7_1_105_c.jpeg" autoPlay="{{ true }}" loop="{{ true }}" muted="{{ true }}" playsInline="{{ true }}" style="display: block; width: 100%; aspect-ratio: 9 / 16; object-fit: cover; max-height: 56vh"></video>
+    </div>
+  </div>
+</section>
+</sc-if>
+
+<div style="position: fixed; left: 0; right: 0; bottom: 18px; display: flex; justify-content: center; align-items: center; gap: 14px; pointer-events: none">
+  <div style="display: flex; align-items: center; gap: 8px; padding: 8px 14px; border-radius: 999px; background: {{ pillBg }}; backdrop-filter: blur(6px)">
+    <sc-for list="{{ dots }}" as="dot" hint-placeholder-count="6">
+      <div style="width: {{ dot.w }}; height: 6px; border-radius: 999px; background: {{ dot.bg }}; transition: all .3s ease"></div>
+    </sc-for>
+  </div>
+</div>
+
+<sc-if value="{{ missOpen }}" hint-placeholder-val="{{ false }}">
+<div onClick="{{ hideMiss }}" style="position: fixed; inset: 0; z-index: 50; display: flex; align-items: center; justify-content: center; padding: 6vw; cursor: pointer; background: radial-gradient(90% 90% at 50% 50%, rgba(168,69,90,.97) 0%, rgba(120,30,48,.98) 100%); animation: overlayIn .35s cubic-bezier(.2,.9,.2,1) both">
+  <div style="font-family: 'Unbounded', sans-serif; font-weight: 700; font-size: clamp(38px, 11vw, 170px); line-height: .92; letter-spacing: -.03em; color: #F7F0E4; text-align: center; text-wrap: balance; animation: shakeText .6s ease-in-out .2s 2 both">Оля,<br />ну камооон!?</div>
+</div>
+</sc-if>
+
+<button type="button" onClick="{{ back }}" style="position: fixed; left: 18px; bottom: 14px; min-height: 44px; padding: 10px 18px; border: 0; border-radius: 999px; cursor: pointer; background: {{ backBg }}; color: {{ backFg }}; font-family: 'Manrope', sans-serif; font-weight: 500; font-size: 14px; opacity: {{ backOpacity }}; transition: opacity .3s ease">← назад</button>
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;email&quot;: {&quot;editor&quot;: &quot;text&quot;, &quot;default&quot;: &quot;maks.shtompil@gmail.com&quot;, &quot;tsType&quot;: &quot;string&quot;, &quot;section&quot;: &quot;Збір відповідей&quot;}}">
+const QUESTIONS = [
+  { text: "Де зроблене це фото?", photo: "фото до питання 1", src: "uploads/IMG_1505.jpeg", options: ["Славське", "Сколівські Бескиди", "Волосянка (село біля Славське)"], correct: 1 },
+  { text: "Хто мав виступати в лютому на День святого Валентина, куди ми не пішли?", photo: "фото до питання 2", src: "uploads/pasted-1788259773348-0.png", options: ["Disclosure", "Bicep", "Blessed Madonna"], correct: 2 },
+  { text: "Які цигарки ми курили, коли потрапили в бар Golda?", photo: "фото до питання 3", src: "uploads/IMG_9413.jpeg", options: ["Marlboro", "Parlament", "Davidoff"], correct: 2 },
+  { text: "Куди ми пішли після дегустації пива на Львівському заводі?", photo: "фото до питання 4", src: "uploads/pasted-1788259839043-0.png", options: ["На вечерю в Mad", "В Мак", "Додомцю"], correct: 1 },
+  { text: "Де зроблено це фото?", photo: "фото до питання 5", src: "uploads/047F2337-7FD7-46EE-83D0-E701F957F47E_1_105_c.jpeg", options: ["Концерт каверів на Френка Сінатру", "Після концерту творів якогось відомого композитора в Бот. саду", "День незалежності 2021"], correct: 0 }
+];
+const GIFTS = [
+  { tag: "варіант а", title: "Персонально підібрані кросівки в біговому магазині + щось прикольне в Берліку", img: "uploads/pasted-1788260290798-0.png" },
+  { tag: "варіант б", title: "Каблучка + маска для сну", img: "uploads/pasted-1788260752698-0.png", img2: "uploads/pasted-1788260743196-0.png" },
+  { tag: "варіант в", title: "Каблучка", img: "uploads/pasted-1788261652790-0.png" }
+];
+const LETTERS = ["а", "б", "в", "г"];
+const PAGES = 6; // 1 hero, 2 quiz, 3 score, 4 gift1, 5 gift2, 6 final
+
+class Component extends DCLogic {
+  state = { page: 1, i: 0, picked: null, score: 0, gift: null, miss: false };
+
+  hideMiss(e) { if (e && e.stopPropagation) e.stopPropagation(); clearTimeout(this.missT); this.setState({ miss: false }); }
+
+  componentWillUnmount() { clearTimeout(this.missT); }
+
+  // Відкриває поштовий клієнт із готовим листом.
+  mailHref() {
+    const { gift, score } = this.state;
+    if (gift === null) return "";
+    const email = this.props.email || "maks.shtompil@gmail.com";
+    const subject = "Я обрала подарунок: " + GIFTS[gift].title;
+    const body = [
+      "Привіт! Це Оля.",
+      "",
+      "Обрала подарунок: " + GIFTS[gift].title + " (варіант " + LETTERS[gift] + ")",
+      "Квіз: " + score + "/" + QUESTIONS.length,
+      "",
+      "Дякую!"
+    ].join("\n");
+    return "mailto:" + email + "?subject=" + encodeURIComponent(subject) + "&body=" + encodeURIComponent(body);
+  }
+
+  report() {
+    const { gift, score } = this.state;
+    if (gift === null) return;
+    try {
+      localStorage.setItem("olya-gift-choice", JSON.stringify({
+        подарунок: GIFTS[gift].title, бали: score + "/" + QUESTIONS.length, час: new Date().toLocaleString("uk-UA")
+      }));
+    } catch (e) {}
+  }
+
+  go(d) {
+    this.setState(s => {
+      if (d > 0 && s.page === 2) return null; // з квізу вперед — тільки кнопкою під питанням
+      return { page: Math.min(PAGES, Math.max(1, s.page + d)) };
+    });
+  }
+  pick(n) {
+    if (this.state.picked !== null) return;
+    const ok = n === QUESTIONS[this.state.i].correct;
+    this.setState(s => ({ picked: n, score: s.score + (ok ? 1 : 0), miss: !ok }));
+    if (!ok) {
+      clearTimeout(this.missT);
+      this.missT = setTimeout(() => this.setState({ miss: false }), 2600);
+    }
+  }
+  advance() {
+    const { page, i } = this.state;
+    if (page !== 2) return this.go(1);
+    if (i + 1 >= QUESTIONS.length) return this.setState({ page: 3, picked: null });
+    this.setState({ i: i + 1, picked: null });
+  }
+
+  renderVals() {
+    const { page, i, picked, score, gift } = this.state;
+    const q = QUESTIONS[i];
+    const revealed = picked !== null;
+    const dark = page === 2 || page === 3 || page === 6;
+    const options = q.options.map((text, n) => {
+      let bg = "rgba(247,240,228,.06)", fg = "#F7F0E4", bd = "rgba(247,240,228,.28)", mark = "";
+      if (revealed && n === q.correct) { bg = "rgba(122,168,90,.22)"; bd = "#8FBF6A"; mark = "✓"; }
+      else if (revealed && n === picked) { bg = "rgba(168,69,90,.2)"; bd = "#D3808F"; mark = "✕"; }
+      else if (revealed) { bg = "transparent"; fg = "rgba(247,240,228,.45)"; bd = "rgba(247,240,228,.14)"; }
+      return { letter: LETTERS[n] + ")", text, bg, fg, bd, mark, pick: () => this.pick(n) };
+    });
+    return {
+      p1: page === 1, pQuiz: page === 2, pScore: page === 3, p4: page === 4, p5: page === 5, p6: page === 6,
+      revealed,
+      options,
+      questionText: q.text,
+      photoSlot: q.photo,
+      q1: i === 0, q2: i === 1, q3: i === 2, q4: i === 3, q5: i === 4,
+      progressLabel: "питання " + (i + 1) + " / " + QUESTIONS.length,
+      progressPct: Math.round(((i + (revealed ? 1 : 0)) / QUESTIONS.length) * 100) + "%",
+      feedback: revealed && picked === q.correct ? "Правильно!" : "",
+      nextLabel: i + 1 >= QUESTIONS.length ? "Результат →" : "Наступне питання →",
+      sendAndNext: () => { this.report(); this.go(1); },
+      giftClosed: !this.state.opened,
+      giftOpened: !!this.state.opened,
+      openGift: () => this.setState({ opened: true }),
+      missOpen: this.state.miss,
+      hideMiss: e => this.hideMiss(e),
+      next: () => this.advance(),
+      back: () => this.go(-1),
+      restart: () => this.setState({ page: 2, i: 0, picked: null, score: 0 }),
+      scoreTitle: score + " / " + QUESTIONS.length,
+      scoreText: score === QUESTIONS.length ? "Ідеально. Ти нас пам'ятаєш краще за мене." : "Нічого, головне що ми там були разом.",
+      gifts: GIFTS.map((g, n) => ({
+        tag: g.tag,
+        title: g.title,
+        isA: n === 0, isB: n === 1, isC: n === 2,
+        bg: gift === n ? "#FDF8F0" : "rgba(253,248,240,.55)",
+        bd: gift === n ? "#A8455A" : "#D8C6A6",
+        bstyle: gift === n ? "solid" : "dashed",
+        shadow: gift === n ? "0 22px 44px -26px rgba(42,33,28,.5)" : "none",
+        hint: gift === n ? "Обрано ✓" : "",
+        pick: () => this.setState({ gift: n }, () => this.report())
+      })),
+      videoRef: el => {
+        if (this.videoEl && this.videoEl !== el) { try { this.videoEl.pause(); this.videoEl.muted = true; } catch (e) {} }
+        this.videoEl = el;
+        if (!el) return;
+        el.muted = true;
+        el.volume = 0;
+        el.play().catch(() => {});
+      },
+      keepMuted: e => { const el = e.currentTarget; if (!el.muted || el.volume > 0) { el.muted = true; el.volume = 0; } },
+      mailHref: this.mailHref(),
+      canSend: gift !== null,
+      cannotSend: gift === null,
+      dots: Array.from({ length: PAGES }, (_, n) => ({
+        w: n + 1 === page ? "22px" : "6px",
+        bg: n + 1 === page ? (dark ? "#E9B949" : "#A8455A") : (dark ? "rgba(247,240,228,.3)" : "rgba(42,33,28,.22)")
+      })),
+      pillBg: dark ? "rgba(247,240,228,.08)" : "rgba(42,33,28,.06)",
+      backBg: dark ? "rgba(247,240,228,.1)" : "rgba(42,33,28,.07)",
+      backFg: dark ? "#F7F0E4" : "#2A211C",
+      backOpacity: page === 1 ? "0" : "1"
+    };
+  }
+}
+</script>
+</body>
+</html>
